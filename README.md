@@ -16,3 +16,4 @@ a full stack educational blog application written using three python web framewo
    1. in a commercial setting, we might prefer multirepo to de-noise single-project participation
    2. in this educational setting, the intent is to educate on all three frameworks, so we include all three in this single repo
 4. note the use of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) like the `chore:` prefix on the initial commit
+5. related django tutorial: https://rasulkireev.com/managing-django-with-poetry/
