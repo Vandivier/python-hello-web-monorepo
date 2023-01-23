@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "python-hello-web-monorepo"
+version = "0.1.0"
+description = "an educational python multi-framework web monorepo"
+authors = ["John Vandivier <vandivi3r@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "python_hello_web_monorepo"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
