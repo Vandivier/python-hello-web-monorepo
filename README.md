@@ -20,3 +20,14 @@ a full stack educational blog application written using three python web framewo
 5. related django tutorials:
    1. https://rasulkireev.com/managing-django-with-poetry/
    2. https://justdjango.com/blog/build-a-blog-with-django
+
+### Build and Deploy Process
+
+1. Vercel, Render, and Railway are all live options
+   1. For now, let's try Vercel
+   2. Deploying all three to railway might put us over free tier, so we might pick multiple
+   3. Downside of multiple: harder to build and deploy.
+2. not using docker (for now)
+   1. note a docker option: https://github.com/cloudacademy/python-flask-microservices
+   2. but, where to deploy that?
+3. Flask impl ref: https://github.com/vercel/examples/tree/main/python/flask
