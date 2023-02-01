@@ -17,7 +17,7 @@ a full stack educational blog application written using three python web framewo
    1. in a commercial setting, we might prefer multirepo to de-noise single-project participation
    2. in this educational setting, the intent is to educate on all three frameworks, so we include all three in this single repo
 4. note the use of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) like the `chore:` prefix on the initial commit
-5. During the installation of poetry, you may encounter 'SSL error'. In order to fix that, try direcly use 'pipx install poetry'.
+5. During the installation of poetry, you may encounter 'SSL error'. In order to fix that, try directly use 'pipx install poetry'.
 6. related django tutorials:
    1. https://rasulkireev.com/managing-django-with-poetry/
    2. https://justdjango.com/blog/build-a-blog-with-django
