@@ -23,9 +23,7 @@ Guest access is controlled on the Django side. The third party tool doesn't know
 
 ### Alternatives Considered
 
-We also thought about using FastAPI instead of Flask.
-
-TODO: Why didn't we pick that?
+We also thought about using FastAPI instead of Flask. There is no specific reason that we prefer one or the other.
 
 ### Risks
 

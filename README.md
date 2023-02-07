@@ -36,8 +36,12 @@ a full stack educational blog application written using three python web framewo
 1. please contribute a design doc design doc for major features
    1. a template can be found in `docs/template.md`
    2. existing designs are listed in `docs/index.md`
-2. TODO: define a major feature
-3. TODO: define safe harbor for small changes where no design doc is needed
+2. A major feature meets any of the following criteria:
+   1. Includes a schema change
+   2. Increases latency by more than 10 percent
+   3. Updates more than 5 files or more than 100 lines of code
+   4. Integrates a new third party service
+3. Bug fixes and changes impacting less than 5 files and less than 100 lines of code do not require a design document.
 
 ### while coding
 
