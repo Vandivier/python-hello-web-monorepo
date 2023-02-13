@@ -49,6 +49,8 @@ poetry config virtualenvs.in-project true
 
 You may also need to restart VS Code.
 
+Note that this app was built in Python 3.11, although it may work with earlier versions idk.
+
 ### build and deploy process
 
 1. Vercel, Render, and Railway are all live options
