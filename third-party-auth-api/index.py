@@ -1,10 +1,19 @@
-from flask import Flask
+from json import dumps
+from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/')
+def create_json_response_for_permissions(hasAdmin: bool):
+    return dumps({"hasAdmin": hasAdmin})
+
+@app.route('/', methods=['GET'])
 def home():
-    return 'Hello, World!'
+    username = request.args.get('username', default = "", type = str)
+
+    if username:
+        return create_json_response_for_permissions("admin" in username.lower())
+
+    return create_json_response_for_permissions(False)
 
 @app.route('/about')
 def about():

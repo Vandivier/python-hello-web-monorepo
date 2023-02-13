@@ -39,6 +39,16 @@ As described in this [Flask implementation reference](https://github.com/vercel/
 vercel dev
 ```
 
+When developing, make sure to [select the Poetry Python instance](https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment) as the interpreter for VS Code to become aware of your installed dependencies.
+
+If you are initially unable to locate the environment, try configuring the poetry virtualenv as follows:
+
+```
+poetry config virtualenvs.in-project true
+```
+
+You may also need to restart VS Code.
+
 ### build and deploy process
 
 1. Vercel, Render, and Railway are all live options
