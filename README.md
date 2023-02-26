@@ -29,6 +29,37 @@ a full stack educational blog application written using three python web framewo
    1. https://rasulkireev.com/managing-django-with-poetry/
    2. https://justdjango.com/blog/build-a-blog-with-django
 
+## setup
+
+### running locally
+
+As described in this [Flask implementation reference](https://github.com/vercel/examples/tree/main/python/flask):
+
+```
+vercel dev
+```
+
+When developing, make sure to [select the Poetry Python instance](https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment) as the interpreter for VS Code to become aware of your installed dependencies.
+
+If you are initially unable to locate the environment, try configuring the poetry virtualenv as follows:
+
+```
+poetry config virtualenvs.in-project true
+```
+
+You may also need to restart VS Code.
+
+Note that this app was built in Python 3.11, although it may work with earlier versions idk.
+
+You can also run via invoke like:
+`poetry run invoke run-flask`
+
+### build and deploy process
+
+This app is deployed on Vercel. When you push a series of commits, please create a pull request. A Vercel GitHub Action / Hook will automatically create a preview environment and attempt to build and run tests.
+
+After normal peer review, the code is merged to `main` and a build and deploy to PROD takes place.
+
 ## contributing guidelines
 
 ### before coding
