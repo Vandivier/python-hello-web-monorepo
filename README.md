@@ -54,6 +54,31 @@ Note that this app was built in Python 3.11, although it may work with earlier v
 You can also run via invoke like:
 `poetry run invoke run-flask`
 
+#### making local django users
+
+Note: this may later be automated through migration scripts. For now, here are the manual steps to create a single admin and a single non-admin blog site user.
+
+`poetry run python manage.py createsuperuser`
+
+Enter the following details, as one example:
+
+1. Username: `admin`
+2. Email Address: `admin@foo.com`
+3. Password: `foo12345`
+
+Next:
+
+1. Login as the admin at `http://127.0.0.1:8000/admin/login`
+2. Create a non-admin user. Use the following details, as one example:
+   1. Username: `nonadmin`
+   2. Email Address: `regularuser@foo.com`
+      1. Notice this address does not include the substring `admin`, which is important for the Flask integration to work properly.
+   3. Password: `foo12345`
+3. Create a "third party admin" that looks like a regular user according to basic Django auth rules, but this user will be granted admin priveleges using the Flask API integration. Use the following details, as one example:
+   1. Username: `thirdpartysecretadmin`
+   2. Email Address: `secretadmin@foo.com`
+   3. Password: `foo12345`
+
 ### build and deploy process
 
 This app is deployed on Vercel. When you push a series of commits, please create a pull request. A Vercel GitHub Action / Hook will automatically create a preview environment and attempt to build and run tests.
