@@ -1,14 +1,14 @@
 {
   "builds": [
     {
-      "src": "third-party-auth-api/index.py",
+      "src": "third_party_auth_api/app.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "third-party-auth-api/index.py"
+      "dest": "third_party_auth_api/app.py"
     }
   ]
 }
