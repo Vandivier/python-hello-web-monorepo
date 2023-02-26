@@ -53,13 +53,9 @@ Note that this app was built in Python 3.11, although it may work with earlier v
 
 ### build and deploy process
 
-1. Vercel, Render, and Railway are all live options
-   1. For now, let's try Vercel
-   2. Deploying all three to railway might put us over free tier, so we might pick multiple
-   3. Downside of multiple: harder to build and deploy.
-2. not using docker (for now)
-   1. note a docker option: https://github.com/cloudacademy/python-flask-microservices
-   2. but, where to deploy that?
+This app is deployed on Vercel. When you push a series of commits, please create a pull request. A Vercel GitHub Action / Hook will automatically create a preview environment and attempt to build and run tests.
+
+After normal peer review, the code is merged to `main` and a build and deploy to PROD takes place.
 
 ## contributing guidelines
 
