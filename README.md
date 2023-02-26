@@ -51,6 +51,9 @@ You may also need to restart VS Code.
 
 Note that this app was built in Python 3.11, although it may work with earlier versions idk.
 
+You can also run via invoke like:
+`poetry run invoke run-flask`
+
 ### build and deploy process
 
 This app is deployed on Vercel. When you push a series of commits, please create a pull request. A Vercel GitHub Action / Hook will automatically create a preview environment and attempt to build and run tests.

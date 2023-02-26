@@ -1,10 +1,9 @@
-from json import dumps
 from flask import Flask, request
 
 app = Flask(__name__)
 
 def create_json_response_for_permissions(hasAdmin: bool):
-    return dumps({"hasAdmin": hasAdmin})
+    return {"hasAdmin": hasAdmin}
 
 @app.route('/', methods=['GET'])
 def home():
