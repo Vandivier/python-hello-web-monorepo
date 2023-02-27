@@ -1,14 +1,25 @@
 {
   "builds": [
     {
+      "src": "django_poetry_example/wsgi.py",
+      "use": "@vercel/python"
+    },
+    {
       "src": "third_party_auth_api/app.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/third-party-auth",
       "dest": "third_party_auth_api/app.py"
+    },
+    {
+      "src": "/.*",
+      "dest": "django_poetry_example/wsgi.py",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate"
+      }
     }
   ]
 }
