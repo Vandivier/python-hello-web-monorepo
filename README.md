@@ -68,20 +68,20 @@ Note: this may later be automated through migration scripts. For now, here are t
 Enter the following details, as one example:
 
 1. Username: `admin`
-2. Email Address: `admin@foo.com`
+2. Email Address: `admin-staff-author@foo.com`
 3. Password: `foo12345`
 
 Next:
 
 1. Login as the admin at `http://127.0.0.1:8000/admin/login`
 2. Create a non-admin user. Use the following details, as one example:
-   1. Username: `nonadmin`
+   1. Username: `nonstaff`
    2. Email Address: `regularuser@foo.com`
-      1. Notice this address does not include the substring `admin`, which is important for the Flask integration to work properly.
+      1. Notice this address does not include the substring `staff-author`, which is important for the Flask integration to work properly.
    3. Password: `foo12345`
 3. Create a "third party admin" that looks like a regular user according to basic Django auth rules, but this user will be granted admin priveleges using the Flask API integration. Use the following details, as one example:
-   1. Username: `thirdpartysecretadmin`
-   2. Email Address: `secretadmin@foo.com`
+   1. Username: `thirdpartyauthor`
+   2. Email Address: `staff-author@foo.com`
    3. Password: `foo12345`
 
 ### build and deploy process
@@ -112,3 +112,13 @@ here are some code style opinions used in this repo:
 2. ensure your code passes formatting and linting checks
 3. For Django work, prefer Django classes where they exist.
 4. For non-Django work, prefer functional patterns where possible
+5. If you add a new Poetry dependency, export is for Vercel consumption as follows: 1. `poetry export -f requirements.txt --output requirements.txt` 2. Edit the requirements file to trim Python version, OS, and SHA information.
+   1. For example, take this:
+
+```
+colorama==0.4.6 ; python_version >= "3.11" and python_version < "4.0" and platform_system == "Windows" \
+ --hash=sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44 \
+ --hash=sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6
+```
+
+2.  And shorten it to this: `colorama==0.4.6`
