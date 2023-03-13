@@ -8,7 +8,7 @@ a full stack educational blog application written using three python web framewo
 2. setup
    1. running locally
    2. making local django users
-   3. build and deploy process 
+   3. build and deploy process
 3. contributing guidelines
    1. before coding
    2. while coding
@@ -30,8 +30,9 @@ a full stack educational blog application written using three python web framewo
 4. note the use of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) like the `chore:` prefix on the initial commit
 5. During the installation of poetry, you may encounter 'SSL error'. In order to fix that, try directly use 'pipx install poetry'.
 6. related django tutorials:
-   1. https://rasulkireev.com/managing-django-with-poetry/
-   2. https://justdjango.com/blog/build-a-blog-with-django
+   1. https://djangocentral.com/building-a-blog-application-with-django/
+   2. https://rasulkireev.com/managing-django-with-poetry/
+   3. https://justdjango.com/blog/build-a-blog-with-django
 
 ## setup
 
