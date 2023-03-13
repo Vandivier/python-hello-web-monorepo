@@ -5,7 +5,11 @@ a full stack educational blog application written using three python web framewo
 ## contents
 
 1. architecture notes
-2. contributing guidelines
+2. setup
+   1. running locally
+   2. making local django users
+   3. build and deploy process 
+3. contributing guidelines
    1. before coding
    2. while coding
 
@@ -89,7 +93,7 @@ After normal peer review, the code is merged to `main` and a build and deploy to
 
 ### before coding
 
-1. please contribute a design doc design doc for major features
+1. please contribute a design doc for major features
    1. a template can be found in `docs/template.md`
    2. existing designs are listed in `docs/index.md`
 2. A major feature meets any of the following criteria:
