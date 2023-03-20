@@ -1,6 +1,8 @@
+import os
 from django.http import HttpRequest
 import requests
 
+from django.contrib.auth.models import User
 from django.contrib import admin
 from .models import Post
 
@@ -16,7 +18,14 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
     def has_module_permission(self, request: HttpRequest) -> bool:
-        response: requests.Response = requests.get("http://127.0.0.1:5000/?username=admin-staff-author@foo.com")
+        microservice_url = os.environ.get("NEXT_PUBLIC_VERCEL_URL")
+        email = ""
+        if isinstance(request.user, User):
+            email = request.user.email
+        else:
+            return False
+
+        response: requests.Response = requests.get(f"{microservice_url}/third-party-auth?username={email}")
         return response.json().get("hasAuthor", False)
 
 admin.site.register(Post, PostAdmin)
