@@ -2,7 +2,8 @@
   "builds": [
     {
       "src": "django_poetry_example/wsgi.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb" }
     },
     {
       "src": "third_party_auth_api/app.py",
@@ -12,7 +13,7 @@
       "src": "build_files.sh",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "static"
+        "distDir": "staticfiles_build"
       }
     }
   ],
