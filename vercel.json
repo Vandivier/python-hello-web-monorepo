@@ -3,7 +3,7 @@
     {
       "src": "django_poetry_example/wsgi.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb" }
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     },
     {
       "src": "third_party_auth_api/app.py",
