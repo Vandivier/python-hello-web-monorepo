@@ -26,6 +26,7 @@ class PostAdmin(admin.ModelAdmin):
             return False
 
         response: requests.Response = requests.get(f"{microservice_url}/third-party-auth?username={email}")
+        print("third party auth response json: " + str(response.json()))
         return response.json().get("hasAuthor", False)
 
 admin.site.register(Post, PostAdmin)

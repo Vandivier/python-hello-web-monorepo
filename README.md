@@ -68,21 +68,18 @@ Note: this may later be automated through migration scripts. For now, here are t
 Enter the following details, as one example:
 
 1. Username: `admin`
-2. Email Address: `admin-staff-author@foo.com`
+2. Email Address: `admin@foo.com`
 3. Password: `foo12345`
 
 Next:
 
 1. Login as the admin at `http://127.0.0.1:8000/admin/login`
-2. Create a non-admin user. Use the following details, as one example:
-   1. Username: `nonstaff`
-   2. Email Address: `regularuser@foo.com`
-      1. Notice this address does not include the substring `staff-author`, which is important for the Flask integration to work properly.
-   3. Password: `foo12345`
-3. Create a "third party admin" that looks like a regular user according to basic Django auth rules, but this user will be granted admin priveleges using the Flask API integration. Use the following details, as one example:
+2. Notice that although the admin is a superuser, they cannot see Posts.
+3. Create a third party author that is a superuser like the admin, but they will also be granted author permissions through the Flask API:
    1. Username: `thirdpartyauthor`
    2. Email Address: `staff-author@foo.com`
    3. Password: `foo12345`
+   4. Grant this user Staff and Superuser permissions. Notice that if you remove their email address they cannot see the Post entity in the Admin view, but when you add the email address they receive the permission.
 
 ### build and deploy process
 
