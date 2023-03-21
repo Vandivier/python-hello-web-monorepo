@@ -1,14 +1,37 @@
 {
   "builds": [
     {
-      "src": "third-party-auth-api/index.py",
+      "src": "django_poetry_example/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    },
+    {
+      "src": "third_party_auth_api/app.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "third-party-auth-api/index.py"
+      "src": "/third-party-auth",
+      "dest": "third_party_auth_api/app.py"
+    },
+    { "src": "/static/(.*)", "dest": "static/$1" },
+    {
+      "src": "/.*",
+      "dest": "django_poetry_example/wsgi.py",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate"
+      }
     }
-  ]
+  ],
+  "env": {
+    "NEXT_PUBLIC_VERCEL_URL": "http://localhost:3000"
+  }
 }
